@@ -7,12 +7,20 @@ using data;
 namespace bussiness
 {
     public class Bcustomer
+
+
     {
+        private Dcustomer dcustomer;
+
+        public Bcustomer() 
+        {
+            dcustomer = new Dcustomer();
+        }
 
         public List<Cliente> ListarClientes()
         {
             
-            List<Cliente> clientes = Dcustomer.ListarClientes();
+            List<Cliente> clientes = dcustomer.ListarClientes();
 
             return clientes;
         }
@@ -20,7 +28,7 @@ namespace bussiness
         public Cliente BuscarPorNombre(string name)
         {
             List<Cliente> customers = new List<Cliente>();
-            customers = Dcustomer.ListarClientes();
+            customers = dcustomer.ListarClientes();
 
             foreach (var cust in customers)
             {
@@ -31,6 +39,11 @@ namespace bussiness
             }
 
             return null;
+        }
+
+        public void InsertarCliente(Cliente cliente)
+        {
+            dcustomer.InsertarCliente(cliente);
         }
     }
 }

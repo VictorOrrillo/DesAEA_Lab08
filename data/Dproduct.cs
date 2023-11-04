@@ -11,7 +11,7 @@ namespace data
 {
     public class Dproduct
     {
-        public static string connectionString = "Data Source=DESKTOP-61H0H45\\SQLEXPRESS;Initial Catalog=master;Integrated Security=true";
+        public static string connectionString = "Data Source=DESKTOP-61H0H45\\SQLEXPRESS;Integrated Security=True;Encrypt=False;";
 
         public static List<Product> ListarProducts()
         {

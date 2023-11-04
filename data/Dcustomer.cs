@@ -11,9 +11,9 @@ namespace data
 {
     public class Dcustomer
     {
-        public static string connectionString = "Data Source=DESKTOP-61H0H45\\SQLEXPRESS;Initial Catalog=master;Integrated Security=true";
+        public string connectionString = "Data Source=DESKTOP-61H0H45\\SQLEXPRESS;Initial Catalog=master;Integrated Security=true";
 
-        public static List<Cliente> ListarClientes()
+        public List<Cliente> ListarClientes()
         {
             List<Cliente> clientes = new List<Cliente>();
 
@@ -58,7 +58,7 @@ namespace data
 
         }
 
-        public static void InsertarCliente(Cliente cliente)
+        public void InsertarCliente(Cliente cliente)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -83,7 +83,7 @@ namespace data
             }
         }
 
-        public static void ModificarCliente(Cliente cliente)
+        public void ModificarCliente(Cliente cliente)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -115,7 +115,7 @@ namespace data
             }
         }
 
-        public static void EliminarClienteLogicamente(int customerId)
+        public void EliminarClienteLogicamente(int customerId)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

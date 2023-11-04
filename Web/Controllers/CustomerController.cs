@@ -49,10 +49,20 @@ namespace Web.Controllers
         // POST: CustomerController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(CustomerModel model)
         {
             try
             {
+                Bcustomer bcustomer = new Bcustomer();
+
+                Cliente cliente = new Cliente
+                {
+                    Name = model.Name,
+                    Phone = model.Phone,
+                };
+
+                bcustomer.InsertarCliente(cliente);
+
                 return RedirectToAction(nameof(Index));
             }
             catch
